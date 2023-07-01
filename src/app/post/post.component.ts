@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  signal,
+} from '@angular/core';
 import { Post } from '../model/post.model';
 
 @Component({
@@ -11,5 +16,10 @@ import { Post } from '../model/post.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostComponent {
+  readonly displayId = signal(false);
   @Input({ required: true }) post!: Post;
+
+  toggleDisplayId() {
+    this.displayId.set(!this.displayId());
+  }
 }

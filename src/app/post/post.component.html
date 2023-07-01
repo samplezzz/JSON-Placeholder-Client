@@ -1,2 +1,7 @@
-<h1>{{ post.title }}</h1>
+<h1 (click)="toggleDisplayId()">
+  <ng-container *ngIf="displayId(); else displayTitle">{{
+    post.id
+  }}</ng-container>
+  <ng-template #displayTitle>{{ post.title }}</ng-template>
+</h1>
 <section>{{ post.body }}}</section>
