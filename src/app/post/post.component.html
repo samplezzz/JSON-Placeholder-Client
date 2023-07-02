@@ -1,5 +1,9 @@
 <h1 (click)="toggleDisplayId()">
-  <div class="id" [ngClass]="{ active: displayId() }">{{ post.id }}</div>
-  <div class="title" [ngClass]="{ active: !displayId() }">{{ post.title }}</div>
+  <div class="user-id" [ngClass]="{ active: displayUserId() }">
+    {{ post.userId }}
+  </div>
+  <div class="title" [ngClass]="{ active: !displayUserId() }">
+    {{ post.title }}
+  </div>
 </h1>
 <section>{{ post.body }}}</section>
