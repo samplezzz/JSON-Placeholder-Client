@@ -5,7 +5,7 @@ import {
   Input,
   signal,
 } from '@angular/core';
-import { Post } from '../model/post.model';
+import { Post } from '../../model/post.model';
 
 @Component({
   selector: 'jp-post',
@@ -19,7 +19,7 @@ export class PostComponent {
   readonly displayUserId = signal(false);
   @Input({ required: true }) post!: Post;
 
-  toggleDisplayId() {
+  toggleDisplayUserId() {
     this.displayUserId.set(!this.displayUserId());
   }
 }

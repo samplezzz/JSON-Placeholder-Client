@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 import { PostsClient } from './client/posts-client';
 import { Post } from './model/post.model';
-import { PostComponent } from './post/post.component';
+import { PostComponent } from './components/post/post.component';
 import { trackById } from './util/ng-utils';
 
 @Component({
@@ -17,8 +17,9 @@ import { trackById } from './util/ng-utils';
   animations: [loadingInfoAnimation()],
 })
 export class AppComponent {
-  posts$: Observable<Post[]> | undefined;
+  posts$: Observable<Post[]>;
   trackPosts = trackById<Post>();
+
   constructor(private postClient: PostsClient) {
     this.posts$ = this.postClient.list();
   }
