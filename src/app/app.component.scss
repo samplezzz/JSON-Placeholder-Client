@@ -1,4 +1,15 @@
+:host {
+    text-align: center;
+}
+
 .posts {
+    column-gap: .5em;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+    row-gap: .5em;
+    text-align: left;
+}
+
+.loading-info {
+    transform: translateY(3em);
 }

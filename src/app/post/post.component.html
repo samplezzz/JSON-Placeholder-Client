@@ -1,7 +1,5 @@
 <h1 (click)="toggleDisplayId()">
-  <ng-container *ngIf="displayId(); else displayTitle">{{
-    post.id
-  }}</ng-container>
-  <ng-template #displayTitle>{{ post.title }}</ng-template>
+  <div class="id" [ngClass]="{ active: displayId() }">{{ post.id }}</div>
+  <div class="title" [ngClass]="{ active: !displayId() }">{{ post.title }}</div>
 </h1>
 <section>{{ post.body }}}</section>

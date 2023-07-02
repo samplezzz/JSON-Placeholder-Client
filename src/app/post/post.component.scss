@@ -1,0 +1,39 @@
+:host {
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    font-size: 1em;
+    font-weight: 300;
+    padding: 1em;
+}
+
+h1 {
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 0 1em;
+    position: relative;
+}
+
+.title {
+    font-family: Lora;
+    font-weight: 500;
+    visibility: hidden;
+
+    &.active {
+        visibility: visible;
+    }
+}
+
+.id {
+    color: silver;
+    display: none;
+    font-weight: 700;
+    font-size: 30px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    word-break: break-all;
+
+    &.active {
+        display: block;
+    }
+}
