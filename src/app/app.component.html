@@ -1,5 +1,8 @@
 <div *ngIf="posts$ | async as posts; else loading" class="posts">
-  <jp-post *ngFor="let post of posts" [post]="post"></jp-post>
+  <jp-post
+    *ngFor="let post of posts; trackBy: trackPosts"
+    [post]="post"
+  ></jp-post>
 </div>
 <ng-template #loading>
   <div class="loading-info" @loadingInfo>loading posts...</div>

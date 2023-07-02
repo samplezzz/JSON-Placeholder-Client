@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { PostsClient } from './client/posts-client';
 import { Post } from './model/post.model';
 import { PostComponent } from './post/post.component';
+import { trackById } from './util/ng-utils';
 
 @Component({
   selector: 'jp-root',
@@ -17,6 +18,7 @@ import { PostComponent } from './post/post.component';
 })
 export class AppComponent {
   posts$: Observable<Post[]> | undefined;
+  trackPosts = trackById<Post>();
   constructor(private postClient: PostsClient) {
     this.posts$ = this.postClient.list();
   }
